@@ -1,6 +1,6 @@
 from celery import Celery
 
-app = Celery('tasks', backend='amqp', broker='amqp://')
+app = Celery('fibonacci', backend='amqp', broker='amqp://')
 
 @app.task
 def fib(n):
@@ -8,6 +8,4 @@ def fib(n):
 
   for x in range(n-1):
     a, b = b, a + b;
-    return x;
-
-print(fib(11));
+    return a;
