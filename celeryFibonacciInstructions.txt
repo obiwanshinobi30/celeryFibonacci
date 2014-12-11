@@ -1,0 +1,8 @@
+To get Celery running: celery -A fibonacci worker --loglevel=info
+  (this is not a daemon!)
+
+To get the task to run: 
+
+  import fibonacci import fib
+  result = fib.delay(10)
+  result.get(timeout=1)
